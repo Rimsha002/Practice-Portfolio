@@ -1,0 +1,822 @@
+* {
+    margin: 0px;
+    padding: 0px;
+     font-family: Arial, Helvetica, sans-serif;   
+    border: border-box;
+    text-decoration: none;
+    border: border-box;
+    outline: none;
+}
+
+:root {
+    --bg-color: #081b29;
+    --main-color: rgb(245, 159, 0);
+    --text-color: #0333;
+    --second-text-color: #555;
+    --white-color: #fff;
+    --cover-color: linear-gradient(90deg, orange, rgb(173, 114, 5));
+    --page-color: linear-gradient(90deg, rgb(54, 53, 53), rgb(129, 125, 125));
+    --border: #00abf0;
+    --box-shadow: 0 0 .5rem orange;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(images/back.jpeg);
+    background-repeat: none;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 66rem;
+    height: 40rem; 
+    padding: 2rem;
+    perspective: 250rem;
+    animation: show-animate 2s forwards ;
+}
+
+@keyframes show-animate {
+    0%, 30% {
+        opacity: 0;
+        transform :rotate(-20deg);
+            }
+    100% {
+        opacity:1 ; 
+        transform: rotate(0deg);
+    }        
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--cover-color);
+    /* 👉 */
+    background-image: url(images/wood.jpg); 
+     box-shadow: var(--box-shadow);
+    border-top-left-radius: .6rem;
+    border-bottom-left-radius: .6rem;
+    transform-origin: right;
+}
+
+.cover-left {
+    z-index: -1;
+}
+.cover-right{
+    z-index: 100;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355,1);
+}
+.cover-right #span-1{
+ display: flex;
+ justify-content: center;
+position: relative;
+top :50%; 
+}
+.crown
+{
+    transform: rotate(-30deg);
+    font-size:xx-large;
+    color: var(--main-color);
+    position: absolute;
+    left: 20%;
+    bottom :80%;
+}
+.cover-right span h1{
+    color: var(--main-color);
+    border-bottom: 0.2rem solid var(--main-color);
+    font-family: 'Kalam', cursive;
+}
+
+.cover-right.turn {
+    transform: rotateY(180deg);
+
+}
+
+/* Book */
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: var(--cover-color);
+    perspective: -250rem;
+}
+
+.book .book-page {
+    position: absolute;
+    width: 44%;
+    height: 90%;
+    background: var(--page-color);
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.profile-page {
+    background-color: var(--page-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-page img {
+    width: 11.5rem;
+    border-radius: 50%;
+    border: 0.25rem solid orange;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    bottom: 2rem;
+}
+
+.profile-page h1 {
+    color: orange;
+    font-size: 2.7rem;
+    line-height: 1;
+   
+}
+
+.profile-page h3 {
+    margin: 0.3rem;
+    font-size: 1.3rem;
+    font-family: 'Kalam', cursive;
+   }
+
+/* Social Media */
+.profile-page .social-media {
+     margin: 0.6rem 0 0.8rem; 
+    margin: 0.2rem 0rem 0.2rem; 
+}
+
+.profile-page .social-media a {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    transition: 0.3;
+}
+
+.social-media a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.profile-page p {
+    text-align: justify;
+    line-height: 1.8rem;
+    font-size: 1rem;
+     font-family: Pacifico; 
+     font-family: Kalam; 
+}
+
+  .profile-page .btn-box {
+    position: fixed;
+    bottom: 4rem;
+   }   
+
+.btn
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 9rem;
+    height: 2.5rem;
+    margin: 0.3rem;
+    background: var(--main-color);
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: var(--box-shadow);
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    transform: 0.2;
+    position: relative;  
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-content a.btn {
+    box-shadow: none;
+}
+
+.btn::before
+{
+    content: " ";
+     position: absolute;  
+    top: 0;
+    left: 0; 
+    background-image: url(images/wood2.jpg);
+     width: 0; 
+     height: 100%; 
+    z-index: -1;
+    transition: 0.4s;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+ .btn-box .btn:nth-child(2) {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+/* Page 1 & 2 */
+.book-page.page-right {
+    position: absolute;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355,1);
+}
+
+.page-right.turn {
+    transform: rotateY(180deg);
+}
+
+.page-front,
+.page-back {
+    padding: 1.5rem 2rem; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 92%;
+    background: var(--page-color);
+}
+
+.page-front {
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.page-back {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+/* Title */
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+ }
+
+.workedu-box {
+    border-left: 0.2rem solid orange;
+}
+
+.workedu-box .workedu-content {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.2rem;
+}
+.workedu-content h1{
+    font-family: 'Kalam', cursive;
+}
+
+.workedu-box .workedu-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.65rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.workedu-content .year {
+    color: var(--main-color);
+}
+
+.workedu-content .year i {
+    margin-right: 0.4rem;
+    font-size: 1.2rem;
+}
+
+/* Page-Number */
+.page-number {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nextprev-btn {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: --white-color;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.nextprev-btn:hover {
+    color: var(--main-color);
+}
+
+.nextprev-btn.back {
+    left: 1.5rem;
+}
+
+/* Page no 3 Services */
+.service-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.service-content {
+    flex: 1 1 10rem;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.5rem 0.7rem;
+    text-align: center;
+    transition: all ease;
+}
+
+.service-content:hover {
+    transform: Scale(1.02);
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+}
+
+.service-content i {
+    font-size: 2.2rem;
+    color: var(--main-color);
+}
+
+.service-content h3 {
+    font-size: 1.3rem;
+}
+
+.service-content p {
+    margin: 0.2rem 0 0.2rem
+}
+
+
+/* Page no 4 Skills */
+.skill-bar {
+    margin-bottom: 2rem;
+}
+
+.skill-main h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Kalam', cursive;
+}
+
+.skill-up .skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.skill-up .skill-bar .bar {
+    width: 100%;
+    height: 1.3vh;
+    background-color: var(--second-text-color);
+    border-radius: 25px;
+    margin-top: 1.5vh;
+    position: relative;
+}
+
+.skill-bar .bar span {
+    border-radius: 25px;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--main-color);
+    box-shadow: var(--box-shadow);
+}
+
+.skill-bar .bar .html {
+    width: 75%;
+    animation: html 2s; 
+}
+
+.skill-bar .bar .css {
+    width: 65%;
+    animation: css 2s; 
+}
+.skill-bar .bar .javascript {
+    width: 35%;
+    animation: javascript 2s; 
+}
+
+.skill-bar .bar .figma {
+    width: 20%;
+    animation: figma 2s; 
+}
+
+@keyframes html {
+    0% {
+        width: 0%
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%
+    }
+    100% {
+        width: 35%;
+    }
+}
+
+@keyframes figma {
+    0% {
+        width: 0%
+    }
+
+    100% {
+        width: 20%;
+    }
+}
+
+/* Skill-Down group*/
+.professional {
+     display: flex; 
+   }
+   
+.profe-box {
+    flex: 1 1 1vh; 
+    position: relative;  
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    }
+
+.percent{
+    position: relative;
+    width: 12vh;
+    height: 12vh;
+    padding: 0;
+}
+svg{
+    width: 17vh;
+    height: 17vh;
+   }
+div circle{
+    fill:none;
+    stroke-width: 8;
+    stroke: #000;
+    transform: translate(1vh ,1vh);
+    stroke-dasharray:300 ;
+    stroke-dashoffset: 300;
+}
+
+svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+     stroke: var(--second-text-color); 
+}
+.circle-1 circle:nth-child(2){
+     stroke-dashoffset: calc(300 - (300 * 90 )/ 100); 
+     stroke: var(--main-color);  
+}   
+
+.circle-2 circle:nth-child(2){
+     stroke-dashoffset: calc(300 - (300 * 80 )/ 100); 
+     stroke: var(--main-color);  
+} 
+
+.circle-3 circle:nth-child(2){
+    stroke-dashoffset: calc(300 - (300 * 70 )/ 100); 
+    stroke: var(--main-color);  
+} 
+
+.number{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18vh;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.number h2{
+    font-size: 1.7rem ;
+}
+.text{
+    padding: 0 0;
+    color: var(--main-color);
+    font-weight: 500;
+    letter-spacing: 1;
+}
+/*
+//// Code of Other Method to make dynamic circles ///////
+
+.profe-box .text {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+     margin-top: 1rem; 
+}
+
+.text big {
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    }
+
+.text small {
+    color: orange;
+    display: block;
+    font-weight: 400;
+    margin-top: 2.5rem;
+}
+
+.circle {
+    width: 100%;
+    height: 80px;
+}
+
+.circle .points , .marked{
+    width: 2px;
+    height: 8px;
+    background-color: var(--second-text-color); 
+    position: absolute;
+    left: 47%;
+    top: 40%;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot)))translateY(-45px);
+  
+  }
+.marked {
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+    
+}
+
+@keyframes glow {
+    0% {
+        background: var(--text-color);
+        box-shadow: none;
+    }
+
+    100% {
+        background: orange;
+        box-shadow: var(--box-shadow);
+    }
+} */
+
+
+/* Page 5 Project*/
+.lcd{
+     height: 43vh; 
+     width: auto;
+     display: flex;
+     justify-content: left; 
+    }
+
+ .lcd img {
+    margin: 0  5.5vh;
+    border-radius: 3.5rem;
+    height: 45vh;
+    width: 100vh;
+    display: flex;
+} 
+.portfolio-box video{
+
+    height: 32vh;  
+     margin:0 5vh ;    
+     position: relative; 
+     top:4vh;
+    left:-69vh;  
+    border-radius: 3vh;
+   }
+.info-box{
+margin:1rem 0 1.5rem;
+   } 
+.info-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.info-title h3{
+    font-size: 1.3rem;
+    font-family: 'Kalam', cursive;
+}
+.info-box a{
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+    font-weight: bold;
+    }
+.info-box a i{
+        margin-left:0.3rem;
+    }
+.info-box p:nth-last-of-type(2)
+{
+    font-weight: 600;
+    color: var(--main-color);
+}
+.portfolio-box .btn-box{
+display: flex;
+justify-content: center;
+}
+.portfolio-box .btn-box .btn{
+    margin: 0 1.15rem;
+}
+
+/* Page-6 contact us */
+.contact-box{
+    text-align: center;
+}
+.contact-box .field{
+    width: 100%;
+     background-color:rgb(94, 90, 90); 
+    border: none;
+    border-bottom: 0.2rem solid orange;
+    border-radius: 0.3rem;
+    padding: 0.8rem 0 0.8rem 0; 
+    font-size: 1rem;
+    text-align: center;
+    font-size: large;
+    color: white;
+    margin-bottom: 1.5rem;
+
+}
+.contact-box .field:hover{
+background-image: url(images/wood.jpg);
+}
+.contact-box .field:target {
+    background-image: url(images/wood.jpg);
+    }
+.contact-box .field::placeholder{
+    color: var(--main-color) ;
+}
+.contact-box textarea{
+    resize: none;
+    height: 15rem;
+}
+.contact-box .btn{
+    cursor: pointer;
+    border:none;
+    box-shadow: var(--box-shadow);
+    background: transparent;
+    color: orange;
+
+    transform: 0.2;
+    position: relative;  
+    overflow: hidden;
+    z-index: 1;
+}
+.contact-box .btn:hover{ 
+ background: var(--main-color);
+ color: white;
+} 
+.back-profile{
+ position: absolute;
+bottom: 1.2rem;
+right: 2rem;
+width: 2rem;
+height: 2rem;
+background:transparent ;
+border: var(--border);
+border-radius: 0.3rem;
+font-size: 1.1rem;
+color: var(--main-color);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+transition: 0.5s;
+}
+.back-profile:hover{
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.back-profile p{
+    position: absolute;
+    top: 0;
+    left: 50%;
+     transform: translate(-50%) scale(0.5); 
+     color: var(--main-color);
+    font-size: 1rem;
+    transition: 0.5s;
+    opacity: 0; 
+}
+.back-profile:hover p{
+    opacity: 1;
+    transform: translate(-50%) scale(1);
+    top: -1.8rem;
+}
+
+@media (max-width: 1024px) and (min-width: 768px)
+{
+    html {
+        font-size: 62%; 
+        /* By defualt 1rem = 16px = 100%
+        we want  1rem = 10px which = 52.5% */
+    }
+}  
+
+@media (max-width: 768px) and (min-width: 480px)
+{
+    html {
+        font-size: 62%; 
+        /* By defualt 1rem = 16px = 100%
+        we want  1rem = 10px which = 52.5% */
+    }
+    
+    p.hide{
+        display: none;
+    }
+    .skill-bar {
+        margin-bottom: 0.1vh;
+    }
+    .profe-box {
+        flex: 1 1 1vh; 
+        }
+    
+    .percent{
+        width: 5vh;
+        height: 5vh;
+        }
+    svg{
+        width: 14vh;
+        height: 14vh;
+       }
+   .number{
+    width: 15vh;
+    height: 15vh;
+   }
+   .text{
+    padding: 0 4vh;
+    font-weight: 500;
+    }
+
+
+   .lcd{
+    height: 25vh;  
+    width: auto;
+   }
+
+.lcd img {
+   margin: 0  2.2vh;
+   border-radius: 3.5rem;
+   height: 25vh;
+   width: 100vh;
+   } 
+   .portfolio-box video{
+        height: 19vh;  
+        margin:0 4vh ;    
+        position: relative; 
+        top:2vh;
+       left:-40vh;  
+       border-radius: 3vh;
+      }
+
+}
+
+

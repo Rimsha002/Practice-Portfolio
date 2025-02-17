@@ -17,7 +17,7 @@ A unique and interactive 3D book-style portfolio website built with HTML, CSS, a
 🔗 [View Live Demo](https://rimsha002.github.io/Practice-Portfolio/)
 
 ## 📸 Screenshots
-![Portfolio Preview]((https://github.com/Rimsha002/Practice-Portfolio/blob/main/images/overview.JPG))
+![Portfolio Preview](https://github.com/Rimsha002/Practice-Portfolio/blob/main/images/overview.JPG)
 
  additional animations or interactions.
 
